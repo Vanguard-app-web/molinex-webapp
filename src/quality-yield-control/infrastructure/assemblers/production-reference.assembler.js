@@ -1,7 +1,7 @@
 import {ProductionRecordReference} from "../../domain/model/production-record-reference.js";
 import {ProductionBatchReference} from "../../domain/model/production-batch-reference.js";
 import {ProductionRecordId} from "../../domain/model/production-record-id.js";
-import {Weight} from "../../../production-quality-shared-kernel/domain/model/weight.js";
+import {Weight} from "../../../shared/domain/model/weight.js";
 
 /**
  * Builds the Read Models Quality and Yield Control keeps about Production Management, from the

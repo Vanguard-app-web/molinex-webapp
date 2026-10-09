@@ -1,4 +1,4 @@
-import {Weight} from "../../../production-quality-shared-kernel/domain/model/weight.js";
+import {Weight} from "../../../shared/domain/model/weight.js";
 import {ProductionProcessName} from "./production-process-name.js";
 import {ProductionPeriod} from "./production-period.js";
 import {isProductionStatus} from "./production-status.js";

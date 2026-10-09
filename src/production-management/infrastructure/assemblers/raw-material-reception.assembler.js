@@ -3,7 +3,7 @@ import {RawMaterialReceptionId} from "../../domain/model/raw-material-reception-
 import {ReceptionDateTime} from "../../domain/model/reception-date-time.js";
 import {Supplier} from "../../domain/model/supplier.js";
 import {MaterialOrigin} from "../../domain/model/material-origin.js";
-import {Weight} from "../../../production-quality-shared-kernel/domain/model/weight.js";
+import {Weight} from "../../../shared/domain/model/weight.js";
 
 /**
  * Resource exchanged with the /raw-material-receptions endpoint.

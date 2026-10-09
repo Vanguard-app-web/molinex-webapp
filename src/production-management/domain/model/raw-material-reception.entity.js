@@ -1,4 +1,4 @@
-import {Weight} from "../../../production-quality-shared-kernel/domain/model/weight.js";
+import {Weight} from "../../../shared/domain/model/weight.js";
 import {RawMaterialReceptionId} from "./raw-material-reception-id.js";
 import {ReceptionDateTime} from "./reception-date-time.js";
 import {Supplier} from "./supplier.js";

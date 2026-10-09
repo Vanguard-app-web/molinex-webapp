@@ -4,7 +4,7 @@ import {ProductionBatchId} from "../../domain/model/production-batch-id.js";
 import {ProductionDetails} from "../../domain/model/production-details.js";
 import {ProductionProcessName} from "../../domain/model/production-process-name.js";
 import {ProductionPeriod} from "../../domain/model/production-period.js";
-import {Weight} from "../../../production-quality-shared-kernel/domain/model/weight.js";
+import {Weight} from "../../../shared/domain/model/weight.js";
 
 /**
  * Resource exchanged with the /production-records endpoint.

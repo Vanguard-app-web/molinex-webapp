@@ -1,0 +1,40 @@
+{
+  "name": "molinex-webapp",
+  "private": true,
+  "version": "0.0.1",
+  "description": "Molinex is a web platform for the operational management of rice mills. It illustrates Domain-Driven Design principles and is built with Vue, Axios, Vite, Pinia and PrimeVue, in JavaScript.",
+  "author": "Vanguard Web Applications Development Team",
+  "license": "MIT",
+  "keywords": [
+    "vue",
+    "vite",
+    "pinia",
+    "primevue",
+    "axios",
+    "json-server",
+    "domain-driven-design",
+    "molinex"
+  ],
+  "type": "module",
+  "scripts": {
+    "dev": "vite",
+    "build": "vite build",
+    "preview": "vite preview"
+  },
+  "dependencies": {
+    "@primeuix/themes": "^3.0.1",
+    "axios": "^1.20.0",
+    "pinia": "^4.0.3",
+    "primeflex": "^4.0.0",
+    "primeicons": "^8.0.2",
+    "primevue": "^5.0.2",
+    "vue": "^3.5.42",
+    "vue-i18n": "^11.4.13",
+    "vue-router": "^5.4.0"
+  },
+  "devDependencies": {
+    "@vitejs/plugin-vue": "^6.0.8",
+    "json-server": "^0.17.4",
+    "vite": "^8.3.0"
+  }
+}

@@ -4,6 +4,16 @@ All notable changes to this project are documented in this file.
 
 The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.1.0/), and this project follows [Semantic Versioning](https://semver.org/spec/v2.0.0.html).
 
+## [0.1.1] - 2026-10-09
+
+### Added
+
+- Azure Static Web Apps navigation fallback for direct access to and refreshes of Vue Router routes.
+
+### Changed
+
+- Configured the production frontend to consume the Molinex mock API deployed on Azure App Service.
+
 ## [0.1.0] - 2026-10-09
 
 ### Added

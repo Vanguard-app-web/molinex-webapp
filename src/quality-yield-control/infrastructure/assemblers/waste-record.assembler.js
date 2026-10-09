@@ -1,7 +1,7 @@
 import {WasteRecord} from "../../domain/model/waste-record.entity.js";
 import {WasteRecordId} from "../../domain/model/waste-record-id.js";
 import {ProductionRecordId} from "../../domain/model/production-record-id.js";
-import {Weight} from "../../../production-quality-shared-kernel/domain/model/weight.js";
+import {Weight} from "../../../shared/domain/model/weight.js";
 
 /**
  * Resource exchanged with the /waste-records endpoint.

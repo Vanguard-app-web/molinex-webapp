@@ -9,8 +9,8 @@ import {RawMaterialReception} from "../../domain/model/raw-material-reception.en
 import {ReceptionDateTime} from "../../domain/model/reception-date-time.js";
 import {Supplier} from "../../domain/model/supplier.js";
 import {MaterialOrigin} from "../../domain/model/material-origin.js";
-import {Weight} from "../../../production-quality-shared-kernel/domain/model/weight.js";
-import {MeasurementUnit, measurementUnits} from "../../../production-quality-shared-kernel/domain/model/measurement-unit.js";
+import {Weight} from "../../../shared/domain/model/weight.js";
+import {MeasurementUnit, measurementUnits} from "../../../shared/domain/model/measurement-unit.js";
 import {hasNoErrors, useFormValidation} from "../../../shared/presentation/composables/use-form-validation.js";
 import PageHeader from "../../../shared/presentation/components/page-header.vue";
 import FormField from "../../../shared/presentation/components/form-field.vue";

@@ -1,4 +1,4 @@
-import {Weight} from "../../../production-quality-shared-kernel/domain/model/weight.js";
+import {Weight} from "../../../shared/domain/model/weight.js";
 import {WasteRecordId} from "./waste-record-id.js";
 import {ProductionRecordId} from "./production-record-id.js";
 import {Percentage} from "./percentage.js";

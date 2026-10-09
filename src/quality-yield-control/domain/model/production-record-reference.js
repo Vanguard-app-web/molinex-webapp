@@ -1,4 +1,4 @@
-import {Weight} from "../../../production-quality-shared-kernel/domain/model/weight.js";
+import {Weight} from "../../../shared/domain/model/weight.js";
 import {ProductionRecordId} from "./production-record-id.js";
 
 /**

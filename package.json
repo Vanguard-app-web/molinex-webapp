@@ -1,7 +1,7 @@
 {
   "name": "molinex-webapp",
   "private": true,
-  "version": "0.0.1",
+  "version": "0.1.0",
   "description": "Molinex is a web platform for the operational management of rice mills. It illustrates Domain-Driven Design principles and is built with Vue, Axios, Vite, Pinia and PrimeVue, in JavaScript.",
   "author": "Vanguard Web Applications Development Team",
   "license": "MIT",

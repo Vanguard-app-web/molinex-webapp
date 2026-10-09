@@ -146,7 +146,9 @@ Development follows Git Flow with feature branches and pull requests into `devel
 
 ## Project documentation
 
-Business requirements, architecture diagrams, EventStorming models, and other report artifacts are maintained in the [Molinex Applications Web report](https://github.com/Vanguard-app-web/molinex-report-apweb).
+- [Architecture Decision Records](docs/adrs.md) document the decisions implemented in this codebase.
+- [CHANGELOG.md](CHANGELOG.md) records the contents of each release.
+- Business requirements, architecture diagrams, EventStorming models, and other report artifacts are maintained in the [Molinex Applications Web report](https://github.com/Vanguard-app-web/molinex-report-apweb).
 
 ## License
 

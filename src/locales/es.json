@@ -1,0 +1,490 @@
+{
+  "app": {
+    "name": "Molinex",
+    "tagline": "Centro de operaciones"
+  },
+  "navigation": {
+    "main": "Navegación principal",
+    "open": "Abrir el menú de navegación",
+    "close": "Cerrar el menú de navegación",
+    "skip-to-content": "Saltar al contenido",
+    "groups": {
+      "operations": "Operaciones",
+      "quality": "Calidad y rendimiento",
+      "assets": "Activos"
+    },
+    "items": {
+      "overview": "Resumen",
+      "receptions": "Recepciones",
+      "batches": "Lotes",
+      "production": "Producción",
+      "history": "Historial",
+      "quality": "Calidad",
+      "waste": "Merma",
+      "machinery": "Maquinaria",
+      "maintenance": "Mantenimiento"
+    }
+  },
+  "language": {
+    "label": "Idioma preferido",
+    "names": {
+      "en-US": "Inglés",
+      "es-419": "Español"
+    }
+  },
+  "common": {
+    "actions": "Acciones",
+    "back": "Volver",
+    "cancel": "Cancelar",
+    "edit": "Editar",
+    "loading": "Cargando información...",
+    "no-results": "Ningún registro coincide con los criterios seleccionados. Cambia o limpia los filtros.",
+    "results": "Resultados: {count}",
+    "retry": "Reintentar",
+    "unavailable": "No se pudo cargar la información. Usa Reintentar cuando el API esté disponible."
+  },
+  "filters": {
+    "title": "Filtros",
+    "clear": "Limpiar filtros",
+    "from": "Desde",
+    "to": "Hasta",
+    "batch": "Lote",
+    "status": "Estado",
+    "machine": "Máquina",
+    "type": "Tipo",
+    "all-batches": "Todos los lotes",
+    "all-statuses": "Todos los estados",
+    "all-machines": "Todas las máquinas",
+    "invalid-period": "La fecha inicial no puede ser posterior a la fecha final."
+  },
+  "forms": {
+    "review-fields": "Algunos campos necesitan tu atención. Revisa los mensajes debajo de cada campo.",
+    "unit": "Unidad",
+    "characters": "{count} de {max} caracteres"
+  },
+  "validation": {
+    "required": "Este campo es obligatorio.",
+    "max-length": "Usa como máximo {max} caracteres.",
+    "positive": "Ingresa un valor mayor que cero.",
+    "whole-number": "Ingresa un número entero igual o mayor que cero.",
+    "percentage": "Ingresa un valor entre 0 y 100.",
+    "not-future": "La fecha no puede ser posterior al momento actual."
+  },
+  "api-errors": {
+    "network": "No se pudo conectar con el API de Molinex. Verifica que esté en ejecución e inténtalo de nuevo.",
+    "bad-request": "El API rechazó los datos enviados.",
+    "not-found": "El registro solicitado ya no existe.",
+    "conflict": "El registro entra en conflicto con uno existente.",
+    "server": "El API tuvo un error interno. Inténtalo más tarde.",
+    "invalid-data": "El API devolvió datos que no cumplen las reglas de Molinex.",
+    "unexpected": "Ocurrió un error inesperado."
+  },
+  "operations": {
+    "fetch-receptions": "Carga de recepciones de materia prima",
+    "fetch-batches": "Carga de lotes de producción",
+    "fetch-production-records": "Carga de registros de producción",
+    "register-reception": "Registro de la recepción",
+    "register-batch": "Registro del lote",
+    "register-production-record": "Registro de la producción",
+    "update-production-record": "Actualización del registro de producción",
+    "fetch-assessments": "Carga de resultados de calidad",
+    "fetch-waste-records": "Carga de registros de merma",
+    "fetch-production-references": "Carga de procesos productivos",
+    "record-assessment": "Registro de resultados de calidad",
+    "record-waste": "Registro de merma",
+    "fetch-machines": "Carga de maquinaria",
+    "fetch-maintenance-history": "Carga del historial de mantenimiento",
+    "register-machine": "Registro de la máquina",
+    "record-maintenance": "Registro del mantenimiento"
+  },
+  "units": {
+    "KILOGRAM": "kg",
+    "METRIC_TON": "t",
+    "minutes": "min"
+  },
+  "unit-names": {
+    "KILOGRAM": "Kilogramos (kg)",
+    "METRIC_TON": "Toneladas métricas (t)"
+  },
+  "production-status": {
+    "REGISTERED": "Registrado",
+    "IN_PROGRESS": "En proceso",
+    "COMPLETED": "Completado"
+  },
+  "quality-indicator": {
+    "WHOLE_GRAIN_PERCENTAGE": "Grano entero",
+    "BROKEN_GRAIN_PERCENTAGE": "Grano quebrado",
+    "YIELD_PERCENTAGE": "Rendimiento"
+  },
+  "machine-status": {
+    "OPERATIONAL": "Operativa",
+    "REQUIRES_ATTENTION": "Requiere atención",
+    "UNDER_MAINTENANCE": "En mantenimiento",
+    "OUT_OF_SERVICE": "Fuera de servicio"
+  },
+  "maintenance-type": {
+    "PREVENTIVE": "Preventivo",
+    "CORRECTIVE": "Correctivo"
+  },
+  "page-not-found": {
+    "title": "Página no encontrada",
+    "content": "La dirección {path} no existe en Molinex.",
+    "go-overview": "Ir al resumen de producción"
+  },
+  "production": {
+    "errors": {
+      "unknown-reception": "La recepción seleccionada no está registrada.",
+      "duplicate-batch-code": "Otro lote ya usa este código.",
+      "unknown-batch": "El lote seleccionado no está registrado.",
+      "record-not-found": "No se encontró el registro de producción."
+    }
+  },
+  "production-overview": {
+    "eyebrow": "Flujo del molino",
+    "title": "Operaciones de producción",
+    "description": "Sigue la materia prima desde la recepción hasta los lotes y los procesos productivos.",
+    "activity": "Actividad reciente",
+    "metrics": {
+      "receptions": "Recepciones de materia prima",
+      "batches": "Lotes de producción",
+      "processes": "Procesos productivos",
+      "traceability": "Trazabilidad de lotes",
+      "today": "{count} hoy",
+      "in-progress": "{count} en proceso",
+      "linked": "{linked} de {total} lotes vinculados a una recepción"
+    }
+  },
+  "traceability": {
+    "title": "De la recepción a la producción",
+    "description": "Cada recepción de materia prima, los lotes creados a partir de ella y los procesos realizados en cada lote.",
+    "empty": "Todavía no se ha recibido materia prima.",
+    "reception": "Recepción #{id}",
+    "no-batches": "No se ha registrado ningún lote para esta recepción.",
+    "add-batch": "Agregar lote",
+    "no-processes": "No hay procesos productivos registrados para este lote.",
+    "record-process": "Registrar proceso",
+    "assess-quality": "Registrar resultados de calidad de {process}",
+    "record-waste": "Registrar merma de {process}",
+    "edit-process": "Editar {process}",
+    "unlinked": "Estos lotes apuntan a una recepción que no existe: {codes}."
+  },
+  "receptions": {
+    "eyebrow": "Materia prima",
+    "title": "Recepciones de materia prima",
+    "description": "Arroz cáscara recibido en el molino, por proveedor y procedencia.",
+    "new": "Registrar recepción",
+    "table-title": "Recepciones registradas",
+    "search": "Buscar por id, proveedor o procedencia",
+    "empty": "No se ha registrado ninguna recepción de materia prima.",
+    "create-batch": "Crear lote",
+    "metrics": {
+      "total": "Recepciones",
+      "today": "Recibidas hoy",
+      "suppliers": "Proveedores"
+    },
+    "columns": {
+      "id": "Id",
+      "received-at": "Recepción",
+      "supplier": "Proveedor",
+      "origin": "Procedencia",
+      "quantity": "Cantidad",
+      "batches": "Lotes"
+    }
+  },
+  "reception-form": {
+    "title": "Registrar recepción de materia prima",
+    "description": "Registra el arroz cáscara que ingresa al molino. Los campos marcados con * son obligatorios.",
+    "received-at": "Fecha y hora de recepción",
+    "supplier": "Proveedor",
+    "origin": "Procedencia",
+    "origin-hint": "Lugar del que proviene el arroz, por ejemplo Lambayeque.",
+    "quantity": "Cantidad recibida",
+    "save": "Registrar recepción",
+    "saved": "Recepción #{id} registrada."
+  },
+  "batches": {
+    "eyebrow": "Trazabilidad",
+    "title": "Lotes de producción",
+    "description": "Lotes de materia prima seguidos a lo largo del proceso productivo.",
+    "new": "Crear lote",
+    "table-title": "Lotes registrados",
+    "search": "Buscar por código, recepción, proveedor o procedencia",
+    "empty": "No se ha registrado ningún lote de producción.",
+    "missing-reception": "Recepción no encontrada",
+    "record-process": "Registrar proceso",
+    "view-processes": "Ver procesos",
+    "metrics": {
+      "total": "Lotes",
+      "today": "Registrados hoy",
+      "in-process": "Con procesos productivos"
+    },
+    "columns": {
+      "code": "Código",
+      "reception": "Recepción",
+      "supplier": "Proveedor",
+      "received-quantity": "Cantidad recibida",
+      "registered-at": "Registro",
+      "processes": "Procesos"
+    }
+  },
+  "batch-form": {
+    "title": "Crear lote de producción",
+    "description": "Registra un lote de materia prima y vincúlalo con su recepción. Los campos marcados con * son obligatorios.",
+    "code": "Código del lote",
+    "code-hint": "Código único, por ejemplo LOT-2026-009.",
+    "reception": "Recepción de materia prima",
+    "reception-placeholder": "Selecciona una recepción",
+    "registered-at": "Fecha y hora de registro",
+    "no-receptions": "Registra una recepción de materia prima antes de crear lotes.",
+    "save": "Crear lote",
+    "saved": "Lote {code} creado."
+  },
+  "production-records": {
+    "eyebrow": "Producción",
+    "title": "Procesos productivos",
+    "description": "Procesos registrados para cada lote, con su peso, periodo y estado.",
+    "new": "Registrar producción",
+    "table-title": "Procesos registrados",
+    "empty": "No se ha registrado ningún proceso productivo.",
+    "running": "En curso",
+    "assess-quality": "Calidad",
+    "record-waste": "Merma",
+    "columns": {
+      "batch": "Lote",
+      "process": "Proceso",
+      "weight": "Peso procesado",
+      "started-at": "Inicio",
+      "finished-at": "Fin",
+      "status": "Estado"
+    }
+  },
+  "production-record-form": {
+    "new-title": "Registrar producción",
+    "edit-title": "Actualizar registro de producción",
+    "description": "Registra un proceso productivo de un lote. Los campos marcados con * son obligatorios.",
+    "edit-description": "Corrige la información de un proceso productivo. Su lote no puede cambiar.",
+    "batch": "Lote de producción",
+    "batch-placeholder": "Selecciona un lote",
+    "batch-locked": "El lote de un proceso registrado no se puede cambiar.",
+    "process-name": "Proceso",
+    "process-hint": "Por ejemplo limpieza y descascarado, blanqueado o pulido.",
+    "processed-weight": "Peso procesado",
+    "started-at": "Inicio",
+    "finished-at": "Fin",
+    "finished-hint": "Déjalo vacío mientras el proceso está en curso.",
+    "status": "Estado",
+    "no-batches": "Crea un lote de producción antes de registrar producción.",
+    "save": "Registrar producción",
+    "update": "Guardar cambios",
+    "saved": "Proceso {process} registrado.",
+    "updated": "Proceso {process} actualizado.",
+    "errors": {
+      "finish-before-start": "El fin no puede ser anterior al inicio."
+    }
+  },
+  "production-history": {
+    "eyebrow": "Producción",
+    "title": "Historial de producción",
+    "description": "Procesos productivos por periodo, lote y estado.",
+    "timeline": "Procesos por día",
+    "empty": "No hay procesos productivos para los criterios seleccionados.",
+    "metrics": {
+      "processes": "Procesos",
+      "weight": "Peso procesado",
+      "completed": "Completados",
+      "batches": "Lotes involucrados"
+    }
+  },
+  "quality": {
+    "process": "Proceso productivo",
+    "process-placeholder": "Selecciona un proceso productivo",
+    "no-processes": "Registra un proceso productivo antes de registrar resultados de calidad o merma.",
+    "errors": {
+      "unknown-process": "El proceso productivo seleccionado no está registrado."
+    }
+  },
+  "quality-assessments": {
+    "eyebrow": "Desempeño del grano",
+    "title": "Resultados de calidad",
+    "description": "Grano entero, grano quebrado y rendimiento medidos en cada proceso productivo.",
+    "new": "Registrar resultados de calidad",
+    "table-title": "Resultados registrados",
+    "empty": "No se ha registrado ningún resultado de calidad.",
+    "metrics": {
+      "whole-grain": "Grano entero",
+      "broken-grain": "Grano quebrado",
+      "yield": "Rendimiento",
+      "total": "Evaluaciones",
+      "average": "Promedio de todas las evaluaciones"
+    },
+    "columns": {
+      "assessed-at": "Evaluación",
+      "process": "Proceso",
+      "composition": "Composición"
+    }
+  },
+  "quality-assessment-form": {
+    "title": "Registrar resultados de calidad",
+    "description": "Registra la calidad del arroz obtenido en un proceso productivo. Los campos marcados con * son obligatorios.",
+    "measurements": "Mediciones",
+    "measurements-help": "Valores entre 0 y 100 %. El grano entero más el quebrado no puede superar el 100 %.",
+    "assessed-at": "Fecha y hora de la evaluación",
+    "save": "Registrar resultados",
+    "saved": "Resultados de calidad registrados.",
+    "errors": {
+      "composition": "El grano entero más el quebrado no puede superar el 100 %."
+    }
+  },
+  "waste-records": {
+    "eyebrow": "Control de pérdidas",
+    "title": "Merma de producción",
+    "description": "Merma generada por cada proceso productivo, filtrada por lote y fecha.",
+    "new": "Registrar merma",
+    "table-title": "Registros de merma",
+    "empty": "No se ha registrado merma.",
+    "metrics": {
+      "records": "Registros mostrados",
+      "of-total": "de {total} registrados",
+      "weight": "Merma total",
+      "average": "Merma promedio"
+    },
+    "columns": {
+      "recorded-at": "Registro",
+      "batch": "Lote",
+      "process": "Proceso",
+      "quantity": "Cantidad",
+      "percentage": "Porcentaje de merma"
+    }
+  },
+  "waste-record-form": {
+    "title": "Registrar merma",
+    "description": "Registra la merma de un proceso productivo. Su porcentaje se calcula a partir del peso procesado.",
+    "processed-weight": "Peso procesado: {weight}",
+    "quantity": "Cantidad de merma",
+    "calculated-percentage": "Porcentaje de merma calculado",
+    "percentage-help": "Cantidad de merma dividida entre el peso procesado en el proceso seleccionado.",
+    "recorded-at": "Fecha y hora de registro",
+    "save": "Registrar merma",
+    "saved": "Merma registrada ({percentage}).",
+    "errors": {
+      "exceeds": "La merma no puede superar el peso procesado en el proceso seleccionado."
+    }
+  },
+  "maintenance": {
+    "errors": {
+      "duplicate-machine-code": "Otra máquina ya usa este código.",
+      "unknown-machine": "La máquina seleccionada no está registrada."
+    }
+  },
+  "machines": {
+    "eyebrow": "Activos",
+    "title": "Maquinaria",
+    "description": "Inventario de máquinas del molino y su estado operativo.",
+    "new": "Registrar máquina",
+    "inventory": "Inventario de máquinas",
+    "search": "Buscar por código, nombre o modelo",
+    "empty": "No se ha registrado ninguna máquina.",
+    "model": "Modelo",
+    "status-since": "Estado desde",
+    "history": "Historial",
+    "preventive": "Preventivo",
+    "corrective": "Correctivo"
+  },
+  "machine-form": {
+    "title": "Registrar máquina",
+    "description": "Agrega una máquina al inventario del molino. Los campos marcados con * son obligatorios.",
+    "code": "Código de la máquina",
+    "code-hint": "Código único, se guarda en mayúsculas, por ejemplo MOL-HSK-02.",
+    "name": "Nombre",
+    "model": "Modelo",
+    "model-hint": "Modelo del fabricante, por ejemplo Satake HR-10.",
+    "status": "Estado",
+    "status-changed-at": "Fecha y hora del estado",
+    "save": "Registrar máquina",
+    "saved": "Máquina {code} registrada."
+  },
+  "maintenance-history": {
+    "eyebrow": "Plan de cuidado",
+    "title": "Mantenimiento",
+    "description": "Mantenimientos preventivos y correctivos realizados en cada máquina.",
+    "all-title": "Historial de mantenimiento",
+    "machine-title": "Historial de mantenimiento de {machine}",
+    "all-types": "Todos",
+    "new-preventive": "Registrar preventivo",
+    "new-corrective": "Registrar correctivo",
+    "empty": "No se ha registrado ningún mantenimiento.",
+    "machine-empty": "Esta máquina no tiene actividades de mantenimiento registradas.",
+    "unknown-machine": "Máquina no encontrada",
+    "metrics": {
+      "preventive": "Actividades preventivas",
+      "corrective": "Actividades correctivas",
+      "downtime": "Tiempo de parada correctivo"
+    }
+  },
+  "maintenance-form": {
+    "preventive-title": "Registrar mantenimiento preventivo",
+    "corrective-title": "Registrar mantenimiento correctivo",
+    "preventive-description": "Registra una actividad de mantenimiento preventivo realizada en una máquina. Los campos marcados con * son obligatorios.",
+    "corrective-description": "Documenta la falla de una máquina y la acción realizada para repararla. Los campos marcados con * son obligatorios.",
+    "machine": "Máquina",
+    "machine-placeholder": "Selecciona una máquina",
+    "no-machines": "Registra una máquina antes de registrar mantenimientos.",
+    "performed-at": "Fecha y hora del mantenimiento",
+    "performed-at-hint": "Fecha en que se realizó la actividad.",
+    "responsible": "Técnico responsable",
+    "observations": "Actividad y observaciones",
+    "failure": "Falla",
+    "cause": "Causa",
+    "action": "Acción realizada",
+    "downtime": "Tiempo de parada",
+    "anomaly": "Anomalía relacionada",
+    "anomaly-hint": "Código de anomalía opcional, por ejemplo ANM-2026-012.",
+    "save-preventive": "Registrar mantenimiento preventivo",
+    "save-corrective": "Registrar mantenimiento correctivo",
+    "saved": "Mantenimiento registrado para {machine}."
+  },
+  "primevue": {
+    "dayNames": ["domingo", "lunes", "martes", "miércoles", "jueves", "viernes", "sábado"],
+    "dayNamesShort": ["dom", "lun", "mar", "mié", "jue", "vie", "sáb"],
+    "dayNamesMin": ["D", "L", "M", "X", "J", "V", "S"],
+    "monthNames": ["enero", "febrero", "marzo", "abril", "mayo", "junio", "julio", "agosto", "septiembre", "octubre", "noviembre", "diciembre"],
+    "monthNamesShort": ["ene", "feb", "mar", "abr", "may", "jun", "jul", "ago", "sep", "oct", "nov", "dic"],
+    "today": "Hoy",
+    "clear": "Limpiar",
+    "accept": "Sí",
+    "reject": "No",
+    "chooseYear": "Elegir año",
+    "chooseMonth": "Elegir mes",
+    "chooseDate": "Elegir fecha",
+    "prevDecade": "Década anterior",
+    "nextDecade": "Década siguiente",
+    "prevYear": "Año anterior",
+    "nextYear": "Año siguiente",
+    "prevMonth": "Mes anterior",
+    "nextMonth": "Mes siguiente",
+    "prevHour": "Hora anterior",
+    "nextHour": "Hora siguiente",
+    "prevMinute": "Minuto anterior",
+    "nextMinute": "Minuto siguiente",
+    "weekHeader": "Sem",
+    "firstDayOfWeek": 1,
+    "emptyMessage": "No hay opciones disponibles",
+    "emptyFilterMessage": "No se encontraron resultados",
+    "emptySearchMessage": "No se encontraron resultados",
+    "searchMessage": "{0} resultados disponibles",
+    "selectionMessage": "{0} elementos seleccionados",
+    "emptySelectionMessage": "Ningún elemento seleccionado",
+    "aria": {
+      "close": "Cerrar",
+      "previous": "Anterior",
+      "next": "Siguiente",
+      "navigation": "Navegación",
+      "rowsPerPageLabel": "Filas por página",
+      "firstPageLabel": "Primera página",
+      "lastPageLabel": "Última página",
+      "nextPageLabel": "Página siguiente",
+      "prevPageLabel": "Página anterior",
+      "pageLabel": "Página {page}"
+    }
+  }
+}

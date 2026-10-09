@@ -1,0 +1,446 @@
+{
+  "app": {
+    "name": "Molinex",
+    "tagline": "Operations center"
+  },
+  "navigation": {
+    "main": "Main navigation",
+    "open": "Open navigation menu",
+    "close": "Close navigation menu",
+    "skip-to-content": "Skip to content",
+    "groups": {
+      "operations": "Operations",
+      "quality": "Quality and yield",
+      "assets": "Assets"
+    },
+    "items": {
+      "overview": "Overview",
+      "receptions": "Receptions",
+      "batches": "Batches",
+      "production": "Production",
+      "history": "History",
+      "quality": "Quality",
+      "waste": "Waste",
+      "machinery": "Machinery",
+      "maintenance": "Maintenance"
+    }
+  },
+  "language": {
+    "label": "Preferred language",
+    "names": {
+      "en-US": "English",
+      "es-419": "Spanish"
+    }
+  },
+  "common": {
+    "actions": "Actions",
+    "back": "Back",
+    "cancel": "Cancel",
+    "edit": "Edit",
+    "loading": "Loading information...",
+    "no-results": "No records match the selected criteria. Change or clear the filters.",
+    "results": "Results: {count}",
+    "retry": "Retry",
+    "unavailable": "The information could not be loaded. Use Retry once the API is available."
+  },
+  "filters": {
+    "title": "Filters",
+    "clear": "Clear filters",
+    "from": "From",
+    "to": "To",
+    "batch": "Batch",
+    "status": "Status",
+    "machine": "Machine",
+    "type": "Type",
+    "all-batches": "All batches",
+    "all-statuses": "All statuses",
+    "all-machines": "All machines",
+    "invalid-period": "The start date must not be later than the end date."
+  },
+  "forms": {
+    "review-fields": "Some fields need your attention. Review the messages below each field.",
+    "unit": "Unit",
+    "characters": "{count} of {max} characters"
+  },
+  "validation": {
+    "required": "This field is required.",
+    "max-length": "Use at most {max} characters.",
+    "positive": "Enter a value greater than zero.",
+    "whole-number": "Enter a whole number equal to or greater than zero.",
+    "percentage": "Enter a value between 0 and 100.",
+    "not-future": "The date cannot be later than now."
+  },
+  "api-errors": {
+    "network": "The Molinex API could not be reached. Check that it is running and try again.",
+    "bad-request": "The API rejected the data that was sent.",
+    "not-found": "The requested record no longer exists.",
+    "conflict": "The record conflicts with an existing one.",
+    "server": "The API had an internal error. Try again later.",
+    "invalid-data": "The API returned data that does not meet the Molinex rules.",
+    "unexpected": "An unexpected error occurred."
+  },
+  "operations": {
+    "fetch-receptions": "Loading raw material receptions",
+    "fetch-batches": "Loading production batches",
+    "fetch-production-records": "Loading production records",
+    "register-reception": "Registering the reception",
+    "register-batch": "Registering the batch",
+    "register-production-record": "Registering the production record",
+    "update-production-record": "Updating the production record",
+    "fetch-assessments": "Loading quality results",
+    "fetch-waste-records": "Loading waste records",
+    "fetch-production-references": "Loading production processes",
+    "record-assessment": "Recording quality results",
+    "record-waste": "Recording waste",
+    "fetch-machines": "Loading machinery",
+    "fetch-maintenance-history": "Loading the maintenance history",
+    "register-machine": "Registering the machine",
+    "record-maintenance": "Recording the maintenance"
+  },
+  "units": {
+    "KILOGRAM": "kg",
+    "METRIC_TON": "t",
+    "minutes": "min"
+  },
+  "unit-names": {
+    "KILOGRAM": "Kilograms (kg)",
+    "METRIC_TON": "Metric tons (t)"
+  },
+  "production-status": {
+    "REGISTERED": "Registered",
+    "IN_PROGRESS": "In progress",
+    "COMPLETED": "Completed"
+  },
+  "quality-indicator": {
+    "WHOLE_GRAIN_PERCENTAGE": "Whole grain",
+    "BROKEN_GRAIN_PERCENTAGE": "Broken grain",
+    "YIELD_PERCENTAGE": "Yield"
+  },
+  "machine-status": {
+    "OPERATIONAL": "Operational",
+    "REQUIRES_ATTENTION": "Requires attention",
+    "UNDER_MAINTENANCE": "Under maintenance",
+    "OUT_OF_SERVICE": "Out of service"
+  },
+  "maintenance-type": {
+    "PREVENTIVE": "Preventive",
+    "CORRECTIVE": "Corrective"
+  },
+  "page-not-found": {
+    "title": "Page not found",
+    "content": "The address {path} does not exist in Molinex.",
+    "go-overview": "Go to the production overview"
+  },
+  "production": {
+    "errors": {
+      "unknown-reception": "The selected reception is not registered.",
+      "duplicate-batch-code": "Another batch already uses this code.",
+      "unknown-batch": "The selected batch is not registered.",
+      "record-not-found": "The production record was not found."
+    }
+  },
+  "production-overview": {
+    "eyebrow": "Mill flow",
+    "title": "Production operations",
+    "description": "Follow raw material from reception to batches and production processes.",
+    "activity": "Recent activity",
+    "metrics": {
+      "receptions": "Raw material receptions",
+      "batches": "Production batches",
+      "processes": "Production processes",
+      "traceability": "Batch traceability",
+      "today": "{count} today",
+      "in-progress": "{count} in progress",
+      "linked": "{linked} of {total} batches linked to a reception"
+    }
+  },
+  "traceability": {
+    "title": "From reception to production",
+    "description": "Each raw material reception, the batches created from it and the processes run on each batch.",
+    "empty": "No raw material has been received yet.",
+    "reception": "Reception #{id}",
+    "no-batches": "No batch has been registered for this reception.",
+    "add-batch": "Add batch",
+    "no-processes": "No production process recorded for this batch.",
+    "record-process": "Record process",
+    "assess-quality": "Record quality results for {process}",
+    "record-waste": "Record waste for {process}",
+    "edit-process": "Edit {process}",
+    "unlinked": "These batches point to a reception that does not exist: {codes}."
+  },
+  "receptions": {
+    "eyebrow": "Raw material",
+    "title": "Raw material receptions",
+    "description": "Paddy rice received at the mill, by supplier and origin.",
+    "new": "Register reception",
+    "table-title": "Registered receptions",
+    "search": "Search by id, supplier or origin",
+    "empty": "No raw material reception has been registered.",
+    "create-batch": "Create batch",
+    "metrics": {
+      "total": "Receptions",
+      "today": "Received today",
+      "suppliers": "Suppliers"
+    },
+    "columns": {
+      "id": "Id",
+      "received-at": "Received",
+      "supplier": "Supplier",
+      "origin": "Origin",
+      "quantity": "Quantity",
+      "batches": "Batches"
+    }
+  },
+  "reception-form": {
+    "title": "Register raw material reception",
+    "description": "Record the paddy rice that arrives at the mill. Fields marked with * are required.",
+    "received-at": "Reception date and time",
+    "supplier": "Supplier",
+    "origin": "Origin",
+    "origin-hint": "Place the rice comes from, for example Lambayeque.",
+    "quantity": "Quantity received",
+    "save": "Register reception",
+    "saved": "Reception #{id} registered."
+  },
+  "batches": {
+    "eyebrow": "Traceability",
+    "title": "Production batches",
+    "description": "Lots of raw material followed through the production process.",
+    "new": "Create batch",
+    "table-title": "Registered batches",
+    "search": "Search by code, reception, supplier or origin",
+    "empty": "No production batch has been registered.",
+    "missing-reception": "Reception not found",
+    "record-process": "Record process",
+    "view-processes": "View processes",
+    "metrics": {
+      "total": "Batches",
+      "today": "Registered today",
+      "in-process": "With production processes"
+    },
+    "columns": {
+      "code": "Code",
+      "reception": "Reception",
+      "supplier": "Supplier",
+      "received-quantity": "Received quantity",
+      "registered-at": "Registered",
+      "processes": "Processes"
+    }
+  },
+  "batch-form": {
+    "title": "Create production batch",
+    "description": "Register a lot of raw material and link it to its reception. Fields marked with * are required.",
+    "code": "Batch code",
+    "code-hint": "Unique code, for example LOT-2026-009.",
+    "reception": "Raw material reception",
+    "reception-placeholder": "Select a reception",
+    "registered-at": "Registration date and time",
+    "no-receptions": "Register a raw material reception before creating batches.",
+    "save": "Create batch",
+    "saved": "Batch {code} created."
+  },
+  "production-records": {
+    "eyebrow": "Production",
+    "title": "Production processes",
+    "description": "Processes recorded for each batch, with their weight, period and status.",
+    "new": "Record production",
+    "table-title": "Recorded processes",
+    "empty": "No production process has been recorded.",
+    "running": "Running",
+    "assess-quality": "Quality",
+    "record-waste": "Waste",
+    "columns": {
+      "batch": "Batch",
+      "process": "Process",
+      "weight": "Processed weight",
+      "started-at": "Started",
+      "finished-at": "Finished",
+      "status": "Status"
+    }
+  },
+  "production-record-form": {
+    "new-title": "Record production",
+    "edit-title": "Update production record",
+    "description": "Record a production process for a batch. Fields marked with * are required.",
+    "edit-description": "Correct the information of a production process. Its batch cannot change.",
+    "batch": "Production batch",
+    "batch-placeholder": "Select a batch",
+    "batch-locked": "The batch of a registered process cannot be changed.",
+    "process-name": "Process",
+    "process-hint": "For example cleaning and husking, whitening or polishing.",
+    "processed-weight": "Processed weight",
+    "started-at": "Start",
+    "finished-at": "Finish",
+    "finished-hint": "Leave it empty while the process is running.",
+    "status": "Status",
+    "no-batches": "Create a production batch before recording production.",
+    "save": "Record production",
+    "update": "Save changes",
+    "saved": "Process {process} recorded.",
+    "updated": "Process {process} updated.",
+    "errors": {
+      "finish-before-start": "The finish cannot be earlier than the start."
+    }
+  },
+  "production-history": {
+    "eyebrow": "Production",
+    "title": "Production history",
+    "description": "Production processes by period, batch and status.",
+    "timeline": "Processes by day",
+    "empty": "There are no production processes for the selected criteria.",
+    "metrics": {
+      "processes": "Processes",
+      "weight": "Processed weight",
+      "completed": "Completed",
+      "batches": "Batches involved"
+    }
+  },
+  "quality": {
+    "process": "Production process",
+    "process-placeholder": "Select a production process",
+    "no-processes": "Record a production process before registering quality results or waste.",
+    "errors": {
+      "unknown-process": "The selected production process is not registered."
+    }
+  },
+  "quality-assessments": {
+    "eyebrow": "Grain performance",
+    "title": "Quality results",
+    "description": "Whole grain, broken grain and yield measured for each production process.",
+    "new": "Record quality results",
+    "table-title": "Recorded results",
+    "empty": "No quality result has been recorded.",
+    "metrics": {
+      "whole-grain": "Whole grain",
+      "broken-grain": "Broken grain",
+      "yield": "Yield",
+      "total": "Assessments",
+      "average": "Average of all assessments"
+    },
+    "columns": {
+      "assessed-at": "Assessed",
+      "process": "Process",
+      "composition": "Composition"
+    }
+  },
+  "quality-assessment-form": {
+    "title": "Record quality results",
+    "description": "Record the quality of the rice obtained in a production process. Fields marked with * are required.",
+    "measurements": "Measurements",
+    "measurements-help": "Values between 0 and 100 %. Whole plus broken grain cannot exceed 100 %.",
+    "assessed-at": "Assessment date and time",
+    "save": "Record results",
+    "saved": "Quality results recorded.",
+    "errors": {
+      "composition": "Whole plus broken grain cannot exceed 100 %."
+    }
+  },
+  "waste-records": {
+    "eyebrow": "Loss tracking",
+    "title": "Production waste",
+    "description": "Waste generated by each production process, filtered by batch and date.",
+    "new": "Record waste",
+    "table-title": "Waste records",
+    "empty": "No waste has been recorded.",
+    "metrics": {
+      "records": "Records shown",
+      "of-total": "of {total} recorded",
+      "weight": "Total waste",
+      "average": "Average waste"
+    },
+    "columns": {
+      "recorded-at": "Recorded",
+      "batch": "Batch",
+      "process": "Process",
+      "quantity": "Quantity",
+      "percentage": "Waste percentage"
+    }
+  },
+  "waste-record-form": {
+    "title": "Record waste",
+    "description": "Record the waste of a production process. Its percentage is calculated from the processed weight.",
+    "processed-weight": "Processed weight: {weight}",
+    "quantity": "Waste quantity",
+    "calculated-percentage": "Calculated waste percentage",
+    "percentage-help": "Waste quantity divided by the weight processed in the selected process.",
+    "recorded-at": "Record date and time",
+    "save": "Record waste",
+    "saved": "Waste recorded ({percentage}).",
+    "errors": {
+      "exceeds": "The waste cannot exceed the weight processed in the selected process."
+    }
+  },
+  "maintenance": {
+    "errors": {
+      "duplicate-machine-code": "Another machine already uses this code.",
+      "unknown-machine": "The selected machine is not registered."
+    }
+  },
+  "machines": {
+    "eyebrow": "Assets",
+    "title": "Machinery",
+    "description": "Machine inventory of the mill and its operational status.",
+    "new": "Register machine",
+    "inventory": "Machine inventory",
+    "search": "Search by code, name or model",
+    "empty": "No machine has been registered.",
+    "model": "Model",
+    "status-since": "Status since",
+    "history": "History",
+    "preventive": "Preventive",
+    "corrective": "Corrective"
+  },
+  "machine-form": {
+    "title": "Register machine",
+    "description": "Add a machine to the mill inventory. Fields marked with * are required.",
+    "code": "Machine code",
+    "code-hint": "Unique code, stored in upper case, for example MOL-HSK-02.",
+    "name": "Name",
+    "model": "Model",
+    "model-hint": "Manufacturer model, for example Satake HR-10.",
+    "status": "Status",
+    "status-changed-at": "Status date and time",
+    "save": "Register machine",
+    "saved": "Machine {code} registered."
+  },
+  "maintenance-history": {
+    "eyebrow": "Care schedule",
+    "title": "Maintenance",
+    "description": "Preventive and corrective maintenance carried out on each machine.",
+    "all-title": "Maintenance history",
+    "machine-title": "Maintenance history of {machine}",
+    "all-types": "All",
+    "new-preventive": "Record preventive",
+    "new-corrective": "Record corrective",
+    "empty": "No maintenance has been recorded.",
+    "machine-empty": "This machine has no recorded maintenance activities.",
+    "unknown-machine": "Machine not found",
+    "metrics": {
+      "preventive": "Preventive activities",
+      "corrective": "Corrective activities",
+      "downtime": "Corrective downtime"
+    }
+  },
+  "maintenance-form": {
+    "preventive-title": "Record preventive maintenance",
+    "corrective-title": "Record corrective maintenance",
+    "preventive-description": "Record a preventive maintenance activity performed on a machine. Fields marked with * are required.",
+    "corrective-description": "Document the failure of a machine and the action taken to repair it. Fields marked with * are required.",
+    "machine": "Machine",
+    "machine-placeholder": "Select a machine",
+    "no-machines": "Register a machine before recording maintenance.",
+    "performed-at": "Maintenance date and time",
+    "performed-at-hint": "Date the activity was carried out.",
+    "responsible": "Responsible technician",
+    "observations": "Activity and observations",
+    "failure": "Failure",
+    "cause": "Cause",
+    "action": "Action taken",
+    "downtime": "Downtime",
+    "anomaly": "Related anomaly",
+    "anomaly-hint": "Optional anomaly code, for example ANM-2026-012.",
+    "save-preventive": "Record preventive maintenance",
+    "save-corrective": "Record corrective maintenance",
+    "saved": "Maintenance recorded for {machine}."
+  }
+}

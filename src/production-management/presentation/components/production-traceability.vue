@@ -4,6 +4,7 @@ import {useI18n} from "vue-i18n";
 import {useFormatters} from "../../../shared/presentation/composables/use-formatters.js";
 import ProductionProcessFlow from "./production-process-flow.vue";
 import EmptyState from "../../../shared/presentation/components/empty-state.vue";
+import {useAccessControl} from "../../../iam/presentation/composables/use-access-control.js";
 
 const props = defineProps({
   /** @type {import('../../domain/model/raw-material-reception.entity.js').RawMaterialReception[]} */
@@ -16,6 +17,8 @@ const props = defineProps({
 
 const {t} = useI18n();
 const {formatDateTime, formatWeight} = useFormatters();
+// Actions that register data are only offered to roles that may use them.
+const {canOffer} = useAccessControl();
 
 const sortedReceptions = computed(() =>
     [...props.receptions].sort((first, second) => second.receivedAt.value - first.receivedAt.value));
@@ -45,7 +48,8 @@ const unlinkedBatches = computed(() => {
     </div>
 
     <empty-state v-if="receptions.length === 0" icon="pi pi-truck" :message="t('traceability.empty')">
-      <router-link :to="{name: 'production-reception-new'}">{{ t('receptions.new') }}</router-link>
+      <router-link v-if="canOffer({name: 'production-reception-new'})"
+                   :to="{name: 'production-reception-new'}">{{ t('receptions.new') }}</router-link>
     </empty-state>
 
     <ol v-else class="traceability-list">
@@ -66,7 +70,8 @@ const unlinkedBatches = computed(() => {
           <p v-if="!batchesByReceptionId.get(reception.id.value)" class="secondary-text">
             {{ t('traceability.no-batches') }}
           </p>
-          <router-link :to="{name: 'production-batch-new', query: {receptionId: reception.id.value}}" class="add-batch">
+          <router-link v-if="canOffer({name: 'production-batch-new'})"
+                       :to="{name: 'production-batch-new', query: {receptionId: reception.id.value}}" class="add-batch">
             <i class="pi pi-plus" aria-hidden="true"></i> {{ t('traceability.add-batch') }}
           </router-link>
         </div>

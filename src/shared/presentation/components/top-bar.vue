@@ -2,6 +2,7 @@
 import {computed} from "vue";
 import {useI18n} from "vue-i18n";
 import LanguageSwitcher from "./language-switcher.vue";
+import AuthenticationSection from "../../../iam/presentation/components/authentication-section.vue";
 
 defineEmits(['toggle-navigation']);
 
@@ -25,6 +26,7 @@ const today = computed(() => d(new Date(), 'today'));
         {{ today }}
       </span>
       <language-switcher/>
+      <authentication-section/>
     </div>
   </header>
 </template>

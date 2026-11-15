@@ -115,6 +115,13 @@ img {
     outline-offset: 2px;
 }
 
+/* PrimeVue buttons and toggles replace the outline with a faint state layer; keep the focus ring visible. */
+body .p-button:focus-visible,
+body .p-togglebutton:focus-visible {
+    outline: var(--molinex-focus-ring);
+    outline-offset: 2px;
+}
+
 .visually-hidden {
     position: absolute;
     width: 1px;

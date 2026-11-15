@@ -1,17 +1,47 @@
 <script setup>
-import {ref, watch} from "vue";
+import {computed, ref, watch} from "vue";
 import {useI18n} from "vue-i18n";
 import {useRoute} from "vue-router";
 import SideNavigation from "./side-navigation.vue";
 import TopBar from "./top-bar.vue";
+import useIamStore from "../../../iam/application/iam.store.js";
+import {Permission} from "../../../iam/domain/model/permission.js";
+import {useSessionEndRedirect} from "../../../iam/presentation/composables/use-session-end-redirect.js";
 
 const {t} = useI18n();
 const route = useRoute();
+const iam = useIamStore();
 const navigationOpen = ref(false);
+
+useSessionEndRedirect();
 
 // The menu links by path, not by route name, so the shell never depends on how each bounded
 // context names its routes and keeps working while a module is still being merged.
-const navigationGroups = [
+const commercialGroup = {
+  label: 'navigation.groups.commercial',
+  items: [
+    {label: 'navigation.items.value-proposition', icon: 'pi pi-star',     to: '/value-proposition'},
+    {label: 'navigation.items.plans',              icon: 'pi pi-list',     to: '/plans'},
+    {label: 'navigation.items.contact',            icon: 'pi pi-envelope', to: '/contact'}
+  ]
+};
+const visitorAccountGroup = {
+  label: 'navigation.groups.account',
+  items: [
+    {label: 'navigation.items.sign-in', icon: 'pi pi-sign-in',  to: '/sign-in'},
+    {label: 'navigation.items.sign-up', icon: 'pi pi-user-plus', to: '/sign-up'}
+  ]
+};
+const memberAccountGroup = {
+  label: 'navigation.groups.account',
+  items: [{label: 'navigation.items.profile', icon: 'pi pi-user', to: '/profile'}]
+};
+const administrationGroup = {
+  label: 'navigation.groups.administration',
+  items: [{label: 'navigation.items.users', icon: 'pi pi-users', to: '/users'}]
+};
+
+const operationalGroups = [
   {
     label: 'navigation.groups.operations',
     items: [
@@ -37,6 +67,16 @@ const navigationGroups = [
     ]
   }
 ];
+
+// Visitors see the commercial offer; signed-in users see only what their permissions allow.
+const navigationGroups = computed(() => {
+  if (!iam.isAuthenticated) return [commercialGroup, visitorAccountGroup];
+  return [
+    ...(iam.hasPermission(Permission.VIEW_OPERATIONAL_INFORMATION) ? operationalGroups : []),
+    ...(iam.hasPermission(Permission.MANAGE_USERS) ? [administrationGroup] : []),
+    memberAccountGroup
+  ];
+});
 
 watch(() => route.fullPath, () => navigationOpen.value = false);
 </script>

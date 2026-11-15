@@ -2,6 +2,7 @@
 import {useI18n} from "vue-i18n";
 import {useFormatters} from "../../../shared/presentation/composables/use-formatters.js";
 import ProductionStatusTag from "./production-status-tag.vue";
+import {useAccessControl} from "../../../iam/presentation/composables/use-access-control.js";
 
 defineProps({
   /** @type {import('../../domain/model/production-batch.entity.js').ProductionBatch} */
@@ -12,6 +13,8 @@ defineProps({
 
 const {t} = useI18n();
 const {formatDateTime, formatWeight} = useFormatters();
+// Actions that register or edit data are only offered to roles that may use them.
+const {canOffer} = useAccessControl();
 </script>
 
 <template>
@@ -22,7 +25,8 @@ const {formatDateTime, formatWeight} = useFormatters();
         <strong>{{ batch.code.value }}</strong>
         <small>{{ formatDateTime(batch.registeredAt.value) }}</small>
       </div>
-      <router-link :to="{name: 'production-record-new', query: {batchId: batch.id.value}}" class="flow-link">
+      <router-link v-if="canOffer({name: 'production-record-new'})"
+                   :to="{name: 'production-record-new', query: {batchId: batch.id.value}}" class="flow-link">
         <i class="pi pi-plus" aria-hidden="true"></i> {{ t('traceability.record-process') }}
       </router-link>
     </header>
@@ -36,17 +40,20 @@ const {formatDateTime, formatWeight} = useFormatters();
         </div>
         <production-status-tag :status="record.details.status"/>
         <div class="row-actions">
-          <router-link :to="{name: 'quality-assessment-new', query: {productionRecordId: record.id.value}}"
+          <router-link v-if="canOffer({name: 'quality-assessment-new'})"
+                       :to="{name: 'quality-assessment-new', query: {productionRecordId: record.id.value}}"
                        class="icon-link" :aria-label="t('traceability.assess-quality', {process: record.details.processName.value})"
                        :title="t('traceability.assess-quality', {process: record.details.processName.value})">
             <i class="pi pi-verified" aria-hidden="true"></i>
           </router-link>
-          <router-link :to="{name: 'quality-waste-new', query: {productionRecordId: record.id.value}}"
+          <router-link v-if="canOffer({name: 'quality-waste-new'})"
+                       :to="{name: 'quality-waste-new', query: {productionRecordId: record.id.value}}"
                        class="icon-link" :aria-label="t('traceability.record-waste', {process: record.details.processName.value})"
                        :title="t('traceability.record-waste', {process: record.details.processName.value})">
             <i class="pi pi-chart-pie" aria-hidden="true"></i>
           </router-link>
-          <router-link :to="{name: 'production-record-edit', params: {id: record.id.value}}"
+          <router-link v-if="canOffer({name: 'production-record-edit', params: {id: record.id.value}})"
+                       :to="{name: 'production-record-edit', params: {id: record.id.value}}"
                        class="icon-link" :aria-label="t('traceability.edit-process', {process: record.details.processName.value})"
                        :title="t('traceability.edit-process', {process: record.details.processName.value})">
             <i class="pi pi-pencil" aria-hidden="true"></i>

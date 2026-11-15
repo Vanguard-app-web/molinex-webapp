@@ -11,7 +11,10 @@
     "groups": {
       "operations": "Operations",
       "quality": "Quality and yield",
-      "assets": "Assets"
+      "assets": "Assets",
+      "commercial": "Discover Molinex",
+      "account": "Account",
+      "administration": "Administration"
     },
     "items": {
       "overview": "Overview",
@@ -22,7 +25,14 @@
       "quality": "Quality",
       "waste": "Waste",
       "machinery": "Machinery",
-      "maintenance": "Maintenance"
+      "maintenance": "Maintenance",
+      "value-proposition": "Why Molinex",
+      "plans": "Plans",
+      "contact": "Contact",
+      "sign-in": "Sign in",
+      "sign-up": "Create account",
+      "profile": "My profile",
+      "users": "Users"
     }
   },
   "language": {
@@ -68,7 +78,10 @@
     "positive": "Enter a value greater than zero.",
     "whole-number": "Enter a whole number equal to or greater than zero.",
     "percentage": "Enter a value between 0 and 100.",
-    "not-future": "The date cannot be later than now."
+    "not-future": "The date cannot be later than now.",
+    "email": "Enter a valid email address.",
+    "phone": "Enter a valid phone number (7 to 15 digits).",
+    "password-min": "Use at least {min} characters."
   },
   "api-errors": {
     "network": "The Molinex API could not be reached. Check that it is running and try again.",
@@ -77,7 +90,16 @@
     "conflict": "The record conflicts with an existing one.",
     "server": "The API had an internal error. Try again later.",
     "invalid-data": "The API returned data that does not meet the Molinex rules.",
-    "unexpected": "An unexpected error occurred."
+    "unexpected": "An unexpected error occurred.",
+    "invalid-credentials": "The email address or the password is incorrect.",
+    "account-inactive": "This account is inactive and cannot sign in. Contact an administrator.",
+    "account-locked": "This account is locked and cannot sign in. Contact an administrator.",
+    "email-registered": "An account with this email address already exists.",
+    "last-administrator": "The last active administrator cannot lose the administrator role.",
+    "user-not-found": "The user no longer exists.",
+    "session-expired": "Your session is missing or no longer valid. Sign in again.",
+    "privilege-change": "Roles, permissions and account status cannot be changed here.",
+    "forbidden": "Your role does not allow this action."
   },
   "operations": {
     "fetch-receptions": "Loading raw material receptions",
@@ -95,7 +117,18 @@
     "fetch-machines": "Loading machinery",
     "fetch-maintenance-history": "Loading the maintenance history",
     "register-machine": "Registering the machine",
-    "record-maintenance": "Recording the maintenance"
+    "record-maintenance": "Recording the maintenance",
+    "sign-in": "Signing in",
+    "sign-up": "Creating the account",
+    "sign-out": "Signing out",
+    "restore-session": "Restoring the previous session",
+    "fetch-users": "Loading users",
+    "register-user": "Registering the user",
+    "assign-role": "Assigning the role",
+    "update-profile": "Updating the profile",
+    "fetch-plans": "Loading plans",
+    "fetch-value-proposition": "Loading the value proposition",
+    "submit-inquiry": "Sending the request"
   },
   "units": {
     "KILOGRAM": "kg",
@@ -442,5 +475,160 @@
     "save-preventive": "Record preventive maintenance",
     "save-corrective": "Record corrective maintenance",
     "saved": "Maintenance recorded for {machine}."
+  },
+  "authentication": {
+    "sign-in": "Sign in",
+    "sign-out": "Sign out",
+    "profile": "My profile"
+  },
+  "sign-in-form": {
+    "eyebrow": "Access",
+    "title": "Sign in",
+    "description": "Use your Molinex account to work with production, quality and maintenance.",
+    "email": "Email address",
+    "password": "Password",
+    "submit": "Sign in",
+    "create-account": "Create an account",
+    "welcome": "Welcome, {name}.",
+    "reasons": {
+      "signed-out": "You have signed out.",
+      "session-expired": "Your session is no longer valid. Sign in again to continue."
+    }
+  },
+  "user-form": {
+    "eyebrow": "User administration",
+    "eyebrow-sign-up": "Access",
+    "title-sign-up": "Create an account",
+    "title-create": "Register a user",
+    "title-edit": "Edit user",
+    "description-sign-up": "Register to use Molinex. New accounts receive a default role; only an administrator can change it.",
+    "description-create": "Register a person and choose the role that decides what they can do in Molinex.",
+    "description-edit": "Update the profile information of this user. The email address and the role are not changed here.",
+    "full-name": "Full name",
+    "email": "Email address",
+    "email-fixed": "The email address cannot be changed.",
+    "password": "Password",
+    "password-hint": "Use at least {min} characters.",
+    "job-title": "Job title",
+    "phone": "Phone number",
+    "phone-hint": "Optional. Digits, spaces and + ( ) - . are accepted.",
+    "role": "Role",
+    "role-permissions": "This role allows:",
+    "sign-up-role-note": "New accounts receive the {role} role. Only an administrator can change it.",
+    "save-sign-up": "Create account",
+    "save-create": "Register user",
+    "save-edit": "Save changes",
+    "account-created": "Account created for {email}. You can sign in now.",
+    "updated": "Profile of {name} updated.",
+    "registered": "{name} was registered.",
+    "back-to-users": "Back to users"
+  },
+  "user-list": {
+    "eyebrow": "User administration",
+    "title": "Users",
+    "description": "Review the people who can sign in, their roles and the state of their accounts.",
+    "new": "Register user",
+    "metrics": {
+      "total": "Users",
+      "active": "Active accounts",
+      "not-active": "Inactive or locked"
+    },
+    "table-title": "Registered users",
+    "search": "Search users",
+    "empty": "No users are registered yet.",
+    "columns": {
+      "name": "User",
+      "job-title": "Job title",
+      "role": "Role",
+      "status": "Status"
+    },
+    "edit": "Edit",
+    "assign-role": "Role"
+  },
+  "role-assignment-form": {
+    "eyebrow": "User administration",
+    "title": "Assign a role",
+    "description": "The role decides which permissions the user holds. The user sees the change after signing in again.",
+    "role": "Role",
+    "permissions": "This role allows:",
+    "save": "Assign role",
+    "assigned": "{name} now has the {role} role."
+  },
+  "profile-view": {
+    "eyebrow": "Account",
+    "title": "My profile",
+    "description": "Review your account and update your personal information.",
+    "account": "Account",
+    "email": "Email address",
+    "role": "Role",
+    "status": "Status",
+    "permissions": "Your role allows:",
+    "privileges-note": "Your role and permissions are managed by an administrator and cannot be changed here.",
+    "personal-information": "Personal information",
+    "save": "Save changes",
+    "saved": "Your profile was updated."
+  },
+  "access-denied": {
+    "title": "Access denied",
+    "content": "Your role does not allow you to open this page.",
+    "content-path": "Your role does not allow you to open {path}.",
+    "go-back": "Go to my workspace"
+  },
+  "role-type": {
+    "ADMINISTRATOR": "Administrator",
+    "MAINTENANCE_TECHNICIAN": "Maintenance technician",
+    "PRODUCTION_OPERATOR": "Production operator"
+  },
+  "account-status": {
+    "ACTIVE": "Active",
+    "INACTIVE": "Inactive",
+    "LOCKED": "Locked"
+  },
+  "permission": {
+    "MANAGE_USERS": "Manage users and roles",
+    "MANAGE_PRODUCTION": "Record production, quality and waste",
+    "MANAGE_MAINTENANCE": "Manage machines and maintenance",
+    "VIEW_OPERATIONAL_INFORMATION": "View operational information",
+    "VIEW_REPORTS": "View reports"
+  },
+  "permission-list": {
+    "none": "No permissions."
+  },
+  "value-proposition": {
+    "eyebrow": "Molinex",
+    "title": "Why Molinex",
+    "description": "What Molinex offers rice mills.",
+    "see-plans": "See plans",
+    "contact": "Contact us",
+    "benefits": "Benefits",
+    "no-benefits": "The benefits of Molinex have not been published yet. Contact us to learn more."
+  },
+  "plan-catalog": {
+    "eyebrow": "Molinex",
+    "title": "Plans",
+    "description": "The plans available for Molinex.",
+    "value-proposition": "Why Molinex",
+    "contact": "Contact us",
+    "empty": "No plans have been published yet. Contact us to learn about the offer.",
+    "features": "Features of {plan}"
+  },
+  "commercial-inquiry-form": {
+    "eyebrow": "Contact",
+    "title": "Contact us",
+    "description": "Leave your details and a message so the Molinex team can get in touch.",
+    "received-title": "Request received",
+    "received": "Your request was recorded. The Molinex team can reach you at {email}.",
+    "reference": "Reference",
+    "submitted-at": "Received on",
+    "back": "Back to Molinex",
+    "send-another": "Send another request",
+    "full-name": "Full name",
+    "company": "Company",
+    "email": "Email address",
+    "phone": "Phone number",
+    "phone-hint": "Optional. Digits, spaces and + ( ) - . are accepted.",
+    "message": "Message",
+    "submit": "Send request",
+    "retry": "Try sending again"
   }
 }

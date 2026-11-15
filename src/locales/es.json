@@ -11,7 +11,10 @@
     "groups": {
       "operations": "Operaciones",
       "quality": "Calidad y rendimiento",
-      "assets": "Activos"
+      "assets": "Activos",
+      "commercial": "Conoce Molinex",
+      "account": "Cuenta",
+      "administration": "Administración"
     },
     "items": {
       "overview": "Resumen",
@@ -22,7 +25,14 @@
       "quality": "Calidad",
       "waste": "Merma",
       "machinery": "Maquinaria",
-      "maintenance": "Mantenimiento"
+      "maintenance": "Mantenimiento",
+      "value-proposition": "Por qué Molinex",
+      "plans": "Planes",
+      "contact": "Contacto",
+      "sign-in": "Iniciar sesión",
+      "sign-up": "Crear cuenta",
+      "profile": "Mi perfil",
+      "users": "Usuarios"
     }
   },
   "language": {
@@ -68,7 +78,10 @@
     "positive": "Ingresa un valor mayor que cero.",
     "whole-number": "Ingresa un número entero igual o mayor que cero.",
     "percentage": "Ingresa un valor entre 0 y 100.",
-    "not-future": "La fecha no puede ser posterior al momento actual."
+    "not-future": "La fecha no puede ser posterior al momento actual.",
+    "email": "Ingresa un correo electrónico válido.",
+    "phone": "Ingresa un teléfono válido (de 7 a 15 dígitos).",
+    "password-min": "Usa al menos {min} caracteres."
   },
   "api-errors": {
     "network": "No se pudo conectar con el API de Molinex. Verifica que esté en ejecución e inténtalo de nuevo.",
@@ -77,7 +90,16 @@
     "conflict": "El registro entra en conflicto con uno existente.",
     "server": "El API tuvo un error interno. Inténtalo más tarde.",
     "invalid-data": "El API devolvió datos que no cumplen las reglas de Molinex.",
-    "unexpected": "Ocurrió un error inesperado."
+    "unexpected": "Ocurrió un error inesperado.",
+    "invalid-credentials": "El correo electrónico o la contraseña son incorrectos.",
+    "account-inactive": "Esta cuenta está inactiva y no puede iniciar sesión. Contacta a un administrador.",
+    "account-locked": "Esta cuenta está bloqueada y no puede iniciar sesión. Contacta a un administrador.",
+    "email-registered": "Ya existe una cuenta con este correo electrónico.",
+    "last-administrator": "El último administrador activo no puede perder el rol de administrador.",
+    "user-not-found": "El usuario ya no existe.",
+    "session-expired": "Tu sesión no existe o ya no es válida. Inicia sesión de nuevo.",
+    "privilege-change": "Los roles, los permisos y el estado de la cuenta no se pueden cambiar aquí.",
+    "forbidden": "Tu rol no permite esta acción."
   },
   "operations": {
     "fetch-receptions": "Carga de recepciones de materia prima",
@@ -95,7 +117,18 @@
     "fetch-machines": "Carga de maquinaria",
     "fetch-maintenance-history": "Carga del historial de mantenimiento",
     "register-machine": "Registro de la máquina",
-    "record-maintenance": "Registro del mantenimiento"
+    "record-maintenance": "Registro del mantenimiento",
+    "sign-in": "Iniciando sesión",
+    "sign-up": "Creando la cuenta",
+    "sign-out": "Cerrando sesión",
+    "restore-session": "Recuperando la sesión anterior",
+    "fetch-users": "Cargando usuarios",
+    "register-user": "Registrando el usuario",
+    "assign-role": "Asignando el rol",
+    "update-profile": "Actualizando el perfil",
+    "fetch-plans": "Cargando planes",
+    "fetch-value-proposition": "Cargando la propuesta de valor",
+    "submit-inquiry": "Enviando la solicitud"
   },
   "units": {
     "KILOGRAM": "kg",
@@ -442,6 +475,161 @@
     "save-preventive": "Registrar mantenimiento preventivo",
     "save-corrective": "Registrar mantenimiento correctivo",
     "saved": "Mantenimiento registrado para {machine}."
+  },
+  "authentication": {
+    "sign-in": "Iniciar sesión",
+    "sign-out": "Cerrar sesión",
+    "profile": "Mi perfil"
+  },
+  "sign-in-form": {
+    "eyebrow": "Acceso",
+    "title": "Iniciar sesión",
+    "description": "Usa tu cuenta de Molinex para trabajar con producción, calidad y mantenimiento.",
+    "email": "Correo electrónico",
+    "password": "Contraseña",
+    "submit": "Iniciar sesión",
+    "create-account": "Crear una cuenta",
+    "welcome": "Bienvenido, {name}.",
+    "reasons": {
+      "signed-out": "Cerraste sesión.",
+      "session-expired": "Tu sesión ya no es válida. Inicia sesión de nuevo para continuar."
+    }
+  },
+  "user-form": {
+    "eyebrow": "Administración de usuarios",
+    "eyebrow-sign-up": "Acceso",
+    "title-sign-up": "Crear una cuenta",
+    "title-create": "Registrar un usuario",
+    "title-edit": "Editar usuario",
+    "description-sign-up": "Regístrate para usar Molinex. Las cuentas nuevas reciben un rol predeterminado; solo un administrador puede cambiarlo.",
+    "description-create": "Registra a una persona y elige el rol que define qué puede hacer en Molinex.",
+    "description-edit": "Actualiza la información de perfil de este usuario. El correo electrónico y el rol no se cambian aquí.",
+    "full-name": "Nombre completo",
+    "email": "Correo electrónico",
+    "email-fixed": "El correo electrónico no se puede cambiar.",
+    "password": "Contraseña",
+    "password-hint": "Usa al menos {min} caracteres.",
+    "job-title": "Cargo",
+    "phone": "Teléfono",
+    "phone-hint": "Opcional. Se aceptan dígitos, espacios y + ( ) - .",
+    "role": "Rol",
+    "role-permissions": "Este rol permite:",
+    "sign-up-role-note": "Las cuentas nuevas reciben el rol {role}. Solo un administrador puede cambiarlo.",
+    "save-sign-up": "Crear cuenta",
+    "save-create": "Registrar usuario",
+    "save-edit": "Guardar cambios",
+    "account-created": "Cuenta creada para {email}. Ya puedes iniciar sesión.",
+    "updated": "Perfil de {name} actualizado.",
+    "registered": "Se registró a {name}.",
+    "back-to-users": "Volver a usuarios"
+  },
+  "user-list": {
+    "eyebrow": "Administración de usuarios",
+    "title": "Usuarios",
+    "description": "Revisa a las personas que pueden iniciar sesión, sus roles y el estado de sus cuentas.",
+    "new": "Registrar usuario",
+    "metrics": {
+      "total": "Usuarios",
+      "active": "Cuentas activas",
+      "not-active": "Inactivas o bloqueadas"
+    },
+    "table-title": "Usuarios registrados",
+    "search": "Buscar usuarios",
+    "empty": "Todavía no hay usuarios registrados.",
+    "columns": {
+      "name": "Usuario",
+      "job-title": "Cargo",
+      "role": "Rol",
+      "status": "Estado"
+    },
+    "edit": "Editar",
+    "assign-role": "Rol"
+  },
+  "role-assignment-form": {
+    "eyebrow": "Administración de usuarios",
+    "title": "Asignar un rol",
+    "description": "El rol define los permisos del usuario. El usuario verá el cambio al iniciar sesión de nuevo.",
+    "role": "Rol",
+    "permissions": "Este rol permite:",
+    "save": "Asignar rol",
+    "assigned": "{name} ahora tiene el rol {role}."
+  },
+  "profile-view": {
+    "eyebrow": "Cuenta",
+    "title": "Mi perfil",
+    "description": "Revisa tu cuenta y actualiza tu información personal.",
+    "account": "Cuenta",
+    "email": "Correo electrónico",
+    "role": "Rol",
+    "status": "Estado",
+    "permissions": "Tu rol permite:",
+    "privileges-note": "Tu rol y tus permisos los gestiona un administrador y no se pueden cambiar aquí.",
+    "personal-information": "Información personal",
+    "save": "Guardar cambios",
+    "saved": "Tu perfil se actualizó."
+  },
+  "access-denied": {
+    "title": "Acceso denegado",
+    "content": "Tu rol no permite abrir esta página.",
+    "content-path": "Tu rol no permite abrir {path}.",
+    "go-back": "Ir a mi espacio de trabajo"
+  },
+  "role-type": {
+    "ADMINISTRATOR": "Administrador",
+    "MAINTENANCE_TECHNICIAN": "Técnico de mantenimiento",
+    "PRODUCTION_OPERATOR": "Operario de producción"
+  },
+  "account-status": {
+    "ACTIVE": "Activa",
+    "INACTIVE": "Inactiva",
+    "LOCKED": "Bloqueada"
+  },
+  "permission": {
+    "MANAGE_USERS": "Gestionar usuarios y roles",
+    "MANAGE_PRODUCTION": "Registrar producción, calidad y merma",
+    "MANAGE_MAINTENANCE": "Gestionar maquinaria y mantenimiento",
+    "VIEW_OPERATIONAL_INFORMATION": "Consultar información operativa",
+    "VIEW_REPORTS": "Consultar reportes"
+  },
+  "permission-list": {
+    "none": "Sin permisos."
+  },
+  "value-proposition": {
+    "eyebrow": "Molinex",
+    "title": "Por qué Molinex",
+    "description": "Lo que Molinex ofrece a los molinos de arroz.",
+    "see-plans": "Ver planes",
+    "contact": "Contáctanos",
+    "benefits": "Beneficios",
+    "no-benefits": "Los beneficios de Molinex todavía no se han publicado. Contáctanos para saber más."
+  },
+  "plan-catalog": {
+    "eyebrow": "Molinex",
+    "title": "Planes",
+    "description": "Los planes disponibles de Molinex.",
+    "value-proposition": "Por qué Molinex",
+    "contact": "Contáctanos",
+    "empty": "Todavía no se han publicado planes. Contáctanos para conocer la oferta.",
+    "features": "Características de {plan}"
+  },
+  "commercial-inquiry-form": {
+    "eyebrow": "Contacto",
+    "title": "Contáctanos",
+    "description": "Déjanos tus datos y un mensaje para que el equipo de Molinex se ponga en contacto.",
+    "received-title": "Solicitud recibida",
+    "received": "Tu solicitud quedó registrada. El equipo de Molinex puede comunicarse contigo en {email}.",
+    "reference": "Referencia",
+    "submitted-at": "Recibida el",
+    "back": "Volver a Molinex",
+    "send-another": "Enviar otra solicitud",
+    "full-name": "Nombre completo",
+    "company": "Empresa",
+    "email": "Correo electrónico",
+    "phone": "Teléfono",
+    "phone-hint": "Opcional. Se aceptan dígitos, espacios y + ( ) - .",
+    "message": "Mensaje",
+    "submit": "Enviar solicitud",
+    "retry": "Intentar enviar de nuevo"
   },
   "primevue": {
     "dayNames": ["domingo", "lunes", "martes", "miércoles", "jueves", "viernes", "sábado"],

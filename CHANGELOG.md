@@ -4,6 +4,28 @@ All notable changes to this project are documented in this file.
 
 The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.1.0/), and this project follows [Semantic Versioning](https://semver.org/spec/v2.0.0.html).
 
+## [Unreleased]
+
+### Added
+
+- Identity and Access Management: sign-in, sign-up, sign-out, session recovery after a reload, user list and administration, role assignment, own profile, access-denied page, and the `useIamStore`, `IamApi`, assemblers, `TokenStorage`, `authenticationGuard` and `iamInterceptor` of its design.
+- Role and permission model (`ADMINISTRATOR`, `MAINTENANCE_TECHNICIAN`, `PRODUCTION_OPERATOR`; `MANAGE_USERS`, `MANAGE_PRODUCTION`, `MANAGE_MAINTENANCE`, `VIEW_OPERATIONAL_INFORMATION`, `VIEW_REPORTS`; `ACTIVE`, `INACTIVE`, `LOCKED`) with translated labels.
+- Commercial Engagement: public plan catalog, value proposition and commercial inquiry form, with loading, empty, error, retry and confirmation states, and the `useCommercialStore`, `CommercialApi` and assemblers of its design.
+- Authentication section in the top bar and an application shell navigation that adapts to visitors and to each role.
+- Route authorization by permission in the router; the module route files are unchanged.
+- `VITE_IAM_*` and `VITE_COMMERCIAL_*` endpoint path variables in `.env.development` and `.env.example`; the paths default to the mock API contract when the variable is absent.
+- English and Spanish translations for the new contexts, access errors and API error codes.
+- Automated tests of the new domain models, assemblers, interceptor, access rules, route protection, error mapping, translations and stores.
+- README sections for the local connection to `molinex-platform`, access control, permissions, demonstration accounts and limitations.
+
+### Changed
+
+- `BaseApi` installs the authentication interceptor on every Axios instance; the token is only sent to the API origin, and a rejected token ends the session.
+- `ApiErrorHandler` maps the error codes of the API and the `401` and `403` statuses.
+- The shared `link-button` and the production traceability components hide actions the signed-in role cannot use.
+- Focus rings stay visible on PrimeVue buttons and toggles.
+- The application now expects the `molinex-platform` mock API, whose operational endpoints require a bearer token. `npm run api` keeps the legacy internal mock, which does not implement the new contexts.
+
 ## [0.1.1] - 2026-10-09
 
 ### Added
